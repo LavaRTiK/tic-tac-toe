@@ -17,15 +17,24 @@ namespace Client
         {
             InitializeComponent();
         }
-        public ListGame(string username)
-        {
-            InitializeComponent();
-            this.username = username;
-        }
 
         private void ListGame_Load(object sender, EventArgs e)
         {
-
+            Form1 usernameF = new Form1();
+            while (true)
+            {
+                if (usernameF.ShowDialog() == DialogResult.OK)
+                {
+                    this.username = usernameF.GetUsername();
+                    MessageBox.Show(username);
+                    break;
+                }
+                else
+                {
+                    Close();
+                    break;
+                }
+            }
         }
     }
 }

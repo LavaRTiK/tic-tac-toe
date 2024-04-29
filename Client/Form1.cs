@@ -24,15 +24,16 @@ namespace Client
         }
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            //Провекрка сервера
-            ListGame game = new ListGame(textBoxName.Text);
-            game.Show();
-            Hide();
+
         }
 
         private void button1Cheak_Click(object sender, EventArgs e)
         {
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+           
+        }
+        public string GetUsername()
+        {
+            return textBoxName.Text;
         }
     }
 }
