@@ -55,6 +55,7 @@ namespace Server
                 {
                     strbild.Append($"{(string.IsNullOrWhiteSpace(strbild.ToString()) ? "" : ",")}{item.Name1},{item.Name2},{item.Status}");
                 }
+                Console.WriteLine(strbild.ToString());
                 byte[] bytelist = Encoding.UTF8.GetBytes(strbild.ToString());
                 await stream.WriteAsync(bytelist, 0, strbild.Length);
             }
