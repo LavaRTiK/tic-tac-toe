@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Player_Name = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.buttonOk = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.status = new System.Windows.Forms.Label();
-            this.textBoxPort = new System.Windows.Forms.TextBox();
-            this.labelPort = new System.Windows.Forms.Label();
-            this.button1Cheak = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // Player_Name
             // 
             this.Player_Name.AutoSize = true;
-            this.Player_Name.Location = new System.Drawing.Point(34, 50);
+            this.Player_Name.Location = new System.Drawing.Point(60, 58);
             this.Player_Name.Name = "Player_Name";
             this.Player_Name.Size = new System.Drawing.Size(35, 13);
             this.Player_Name.TabIndex = 0;
@@ -50,7 +49,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(75, 47);
+            this.textBoxName.Location = new System.Drawing.Point(101, 55);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(100, 20);
             this.textBoxName.TabIndex = 1;
@@ -84,40 +83,16 @@
             this.status.TabIndex = 4;
             this.status.Text = "offline";
             // 
-            // textBoxPort
+            // notifyIcon1
             // 
-            this.textBoxPort.Location = new System.Drawing.Point(75, 74);
-            this.textBoxPort.Name = "textBoxPort";
-            this.textBoxPort.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPort.TabIndex = 5;
-            // 
-            // labelPort
-            // 
-            this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(37, 80);
-            this.labelPort.Name = "labelPort";
-            this.labelPort.Size = new System.Drawing.Size(26, 13);
-            this.labelPort.TabIndex = 6;
-            this.labelPort.Text = "Port";
-            // 
-            // button1Cheak
-            // 
-            this.button1Cheak.Location = new System.Drawing.Point(181, 76);
-            this.button1Cheak.Name = "button1Cheak";
-            this.button1Cheak.Size = new System.Drawing.Size(50, 20);
-            this.button1Cheak.TabIndex = 7;
-            this.button1Cheak.Text = "Cheak";
-            this.button1Cheak.UseVisualStyleBackColor = true;
-            this.button1Cheak.Click += new System.EventHandler(this.button1Cheak_Click);
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 153);
-            this.Controls.Add(this.button1Cheak);
-            this.Controls.Add(this.labelPort);
-            this.Controls.Add(this.textBoxPort);
             this.Controls.Add(this.status);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOk);
@@ -141,9 +116,7 @@
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label status;
-        private System.Windows.Forms.TextBox textBoxPort;
-        private System.Windows.Forms.Label labelPort;
-        private System.Windows.Forms.Button button1Cheak;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

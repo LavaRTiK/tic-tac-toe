@@ -16,6 +16,7 @@ namespace Client
         public Form1()
         {
             InitializeComponent();
+            CheackOnline();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,16 +25,29 @@ namespace Client
         }
         private void buttonOk_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1Cheak_Click(object sender, EventArgs e)
-        {
-           
+            if (!string.IsNullOrEmpty(buttonOk.Text))
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
         public string GetUsername()
         {
             return textBoxName.Text;
+        }
+        public void CheackOnline()
+        {
+            try
+            {
+                TcpClient tcpClient = new TcpClient("127.0.0.1", 9000);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            status.ForeColor = Color.Green;
+            status.Text = "Online";
         }
     }
 }
