@@ -15,8 +15,9 @@ namespace Server
         public TcpClient Client2;
         public string Name2 = "Empty";
         public string Status = "Waiting for connections";
-        public Lobby(TcpClient cln, int id)
+        public Lobby(TcpClient cln,string name ,int id)
         {
+            this.Name1 = name;
             this.Clien1 = cln;
             Console.WriteLine("Подключился");
         }
@@ -26,7 +27,7 @@ namespace Server
             if (Clien1 != null && Client2 != null)
             {
                 //Gamestart
-                Console.WriteLine("Запуск игры");
+                Console.WriteLine($"Запуск игры для {Name1} и {Name2}");
             }
         }
     }

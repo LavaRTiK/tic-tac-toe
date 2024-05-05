@@ -80,7 +80,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Connect";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -100,12 +100,29 @@
             this.NamePlayer2,
             this.StatusGame});
             this.listView1.HideSelection = false;
+            this.listView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listView1.Location = new System.Drawing.Point(12, 27);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(650, 293);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // NamePlayer1
+            // 
+            this.NamePlayer1.Text = "NamePlayer1";
+            this.NamePlayer1.Width = 153;
+            // 
+            // NamePlayer2
+            // 
+            this.NamePlayer2.Text = "NamePlayer2";
+            this.NamePlayer2.Width = 241;
+            // 
+            // StatusGame
+            // 
+            this.StatusGame.Text = "StatusGame";
+            this.StatusGame.Width = 123;
             // 
             // button2
             // 

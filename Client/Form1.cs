@@ -38,7 +38,8 @@ namespace Client
         {
             try
             {
-                TcpClient tcpClient = new TcpClient("127.0.0.1", 9000);
+                //TcpClient tcpClient = new TcpClient("127.0.0.1", 9000);
+                //tcpClient.Close();
             }
             catch (Exception ex)
             {
