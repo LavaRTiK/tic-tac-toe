@@ -53,8 +53,9 @@ namespace Client
             Game game = new Game(client);
             if(game.ShowDialog() == DialogResult.OK)
             {
-                Console.WriteLine("end game");
+                //Console.WriteLine("end game");
             }
+            await UpdateListBox();
 
 
         }
@@ -78,7 +79,8 @@ namespace Client
                 Game game = new Game(client);
                 if(game.ShowDialog() == DialogResult.OK)
                 {
-                    Console.WriteLine("end game");
+
+                    //Console.WriteLine("end game") ;
                 }
                 //MessageBox.Show("Запуск игры");
             }
@@ -86,6 +88,7 @@ namespace Client
             {
                 MessageBox.Show("Увы ошибка бля");
             }
+            await UpdateListBox();
         }
 
         private async void button2_Click(object sender, EventArgs e)

@@ -22,12 +22,13 @@ namespace Server
             Console.WriteLine("Подключился");
         }
 
-        public void Cheack()
+        public async Task Cheack()
         {
             if (Clien1 != null && Client2 != null)
             {
-                //Gamestart
+                Game game = new Game(Clien1, Client2);
                 Console.WriteLine($"Запуск игры для {Name1} и {Name2}");
+                await game.Start();
             }
         }
     }

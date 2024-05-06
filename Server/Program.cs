@@ -85,13 +85,13 @@ namespace Server
                     {
                         Console.WriteLine(item.Name2);
                     }
-                    lobby.Cheack();
                     var streamcl = lobby.Clien1.GetStream();
                     byte[] data = Encoding.UTF8.GetBytes("start");
                     await streamcl.WriteAsync(data, 0, data.Length);
                     Console.WriteLine("Отправлено");
-                    Game game = new Game(lobby.Clien1,lobby.Client2);
-                    await game.Start();
+                    await lobby.Cheack();
+                    Console.WriteLine("end game");
+                    list.Remove(lobby);
                     //Запуск роботает, сделать запуск клинету подключения (создать логику игры)
                 }
             }
