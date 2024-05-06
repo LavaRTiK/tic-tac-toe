@@ -50,6 +50,11 @@ namespace Client
             var stream = client.GetStream();
             byte[] data = Encoding.UTF8.GetBytes($"Connect_to_Lobby,{listView1.SelectedItems[0].Text},{username}");
             await stream.WriteAsync(data, 0, data.Length);
+            Game game = new Game(client);
+            if(game.ShowDialog() == DialogResult.OK)
+            {
+                Console.WriteLine("end game");
+            }
 
 
         }
@@ -70,7 +75,12 @@ namespace Client
             bool result = await task;
             if(result == true)
             {
-                MessageBox.Show("Запуск игры");
+                Game game = new Game(client);
+                if(game.ShowDialog() == DialogResult.OK)
+                {
+                    Console.WriteLine("end game");
+                }
+                //MessageBox.Show("Запуск игры");
             }
             else
             {
@@ -94,7 +104,7 @@ namespace Client
             if (stream.DataAvailable)
             {
                 byte[] byteListStrng = new byte[512];
-                int bytesRead = stream.Read(byteListStrng, 0, byteListStrng.Length);
+                int bytesRead = await stream.ReadAsync(byteListStrng, 0, byteListStrng.Length);
                 MessageBox.Show(Encoding.UTF8.GetString(byteListStrng, 0, bytesRead));
 
                 //StringBuilder stringBuilder = new StringBuilder(Encoding.UTF8.GetString(byteListStrng, 0, bytesRead));

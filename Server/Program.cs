@@ -77,6 +77,7 @@ namespace Server
                     var lobby = list.FirstOrDefault(x => x.Name1 == answer[1]);
                     lobby.Client2 = cln;
                     lobby.Name2 = answer[2];
+                    lobby.Status = "The game is on";
                     Console.WriteLine(answer[1]);
                     Console.WriteLine(answer[2]);
                     Console.WriteLine("----------------");
@@ -89,7 +90,9 @@ namespace Server
                     byte[] data = Encoding.UTF8.GetBytes("start");
                     await streamcl.WriteAsync(data, 0, data.Length);
                     Console.WriteLine("Отправлено");
-                    //Запуск роботает сделать запуск клинету подключения (создать логику игры)
+                    Game game = new Game(lobby.Clien1,lobby.Client2);
+                    await game.Start();
+                    //Запуск роботает, сделать запуск клинету подключения (создать логику игры)
                 }
             }
             catch (Exception ex)
