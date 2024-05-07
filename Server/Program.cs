@@ -24,7 +24,7 @@ namespace Server
 
                 while (true)
                 {
-                    await Command(await server.AcceptTcpClientAsync());
+                    Command(await server.AcceptTcpClientAsync());
 
                 }
             }

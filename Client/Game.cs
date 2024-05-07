@@ -25,7 +25,7 @@ namespace Client
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            //DialogResult = DialogResult.OK;
         }
 
         private void Game_Load(object sender, EventArgs e)
@@ -52,6 +52,8 @@ namespace Client
                     //MessageBox.Show("я перевий");
                     znak = "X";
                     znak2 = "O";
+                    labelZnak.Text = $"Your sign {znak}";
+                    labelInfo.Text = "Your first";
                     foreach (var item in mass)
                     {
                         if (string.IsNullOrEmpty(item.Text))
@@ -66,6 +68,8 @@ namespace Client
                 //MessageBox.Show("я не перевий");
                 znak = "O";
                 znak2 = "X";
+                labelZnak.Text = $"Your sign {znak}";
+                labelInfo.Text = "Enemy's turn";
                 await waitCurrent();
             }
         }
@@ -80,6 +84,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -93,6 +98,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -106,6 +112,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -119,6 +126,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -132,6 +140,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -145,6 +154,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
 
         }
@@ -159,6 +169,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -172,6 +183,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
 
@@ -185,6 +197,7 @@ namespace Client
             {
                 item.Enabled = false;
             }
+            labelInfo.Text = "Enemy's turn";
             await waitCurrent();
         }
         private async Task  waitCurrent()
@@ -235,6 +248,7 @@ namespace Client
             else
             {
                 mass[Convert.ToInt32(masspos[0]), Convert.ToInt32(masspos[1])].Text = znak2;
+                labelInfo.Text = "Your turn";
                 foreach (var item in mass)
                 {
                     if (string.IsNullOrEmpty(item.Text))

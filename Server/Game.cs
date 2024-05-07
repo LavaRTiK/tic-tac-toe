@@ -30,7 +30,7 @@ namespace Server
             var streamcln2 = cln2.GetStream();
             string znakcl1 = "";
             string znakcl2 = "";
-            int whoFirst = 0;//random.Next(0, 2);
+            int whoFirst = random.Next(0, 2);
             if (whoFirst == 0)
             {
                 Console.WriteLine("who first 0");
@@ -74,6 +74,7 @@ namespace Server
                         {
                             await streamcln2.WriteAsync(byteWritepos, 0, byteWritepos.Length);
                             Console.WriteLine($"Прочиал {massPos[0]},{massPos[1]}");
+                            //Console.WriteLine(cout);
                         }
                     }
                     else if (streamcln2.DataAvailable)
@@ -86,7 +87,7 @@ namespace Server
                         mass[Convert.ToInt32(massPos[0]), Convert.ToInt32(massPos[1])] = znakcl2;
                         cout++;
                         string winner = await CheackWhyWin(mass, znakcl1, znakcl2);
-                        if (winner == "X" || winner == "O")
+                        if (winner == "X" || winner == "O" || winner =="=")
                         {
                             byte[] win = Encoding.UTF8.GetBytes(poss+","+ winner);
                             await streamcln1.WriteAsync(win, 0, win.Length);
@@ -98,6 +99,7 @@ namespace Server
                         {
                             await streamcln1.WriteAsync(byteWritepos, 0, byteWritepos.Length);
                             Console.WriteLine($"Прочиал {massPos[0]},{massPos[1]}");
+                            //Console.WriteLine(cout);
                         }
                     }
                 }

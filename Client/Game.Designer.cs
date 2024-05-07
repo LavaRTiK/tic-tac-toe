@@ -43,6 +43,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelZnak = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -140,7 +141,7 @@
             // 
             this.labelInfo.AutoSize = true;
             this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelInfo.Location = new System.Drawing.Point(113, 24);
+            this.labelInfo.Location = new System.Drawing.Point(129, 24);
             this.labelInfo.Name = "labelInfo";
             this.labelInfo.Size = new System.Drawing.Size(51, 20);
             this.labelInfo.TabIndex = 10;
@@ -181,11 +182,22 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Enter";
             // 
+            // labelZnak
+            // 
+            this.labelZnak.AutoSize = true;
+            this.labelZnak.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.labelZnak.Location = new System.Drawing.Point(167, 400);
+            this.labelZnak.Name = "labelZnak";
+            this.labelZnak.Size = new System.Drawing.Size(46, 17);
+            this.labelZnak.TabIndex = 15;
+            this.labelZnak.Text = "label2";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelZnak);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
@@ -226,5 +238,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelZnak;
     }
 }
