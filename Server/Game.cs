@@ -36,6 +36,8 @@ namespace Server
                 Console.WriteLine("who first 0");
                 data = Encoding.UTF8.GetBytes("first");
                 await streamcln1.WriteAsync(data, 0, data.Length);
+                data = Encoding.UTF8.GetBytes(" ");
+                await streamcln2.WriteAsync(data, 0, data.Length);
                 znakcl1 = "X";
                 znakcl2 = "O";
             }
@@ -44,6 +46,8 @@ namespace Server
                 Console.WriteLine("who first 1");
                 data = Encoding.UTF8.GetBytes("first");
                 await streamcln2.WriteAsync(data, 0, data.Length);
+                data = Encoding.UTF8.GetBytes(" ");
+                await streamcln1.WriteAsync(data, 0, data.Length);
                 znakcl1 = "O";
                 znakcl2 = "X";
             }

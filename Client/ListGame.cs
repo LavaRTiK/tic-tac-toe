@@ -89,6 +89,9 @@ namespace Client
             {
                 MessageBox.Show("Увы ошибка бля");
             }
+            button1.Enabled = true;
+            button2.Enabled = true;
+            играToolStripMenuItem.Enabled = true;
             await UpdateListBox();
         }
 

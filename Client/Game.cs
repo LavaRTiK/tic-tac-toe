@@ -42,24 +42,22 @@ namespace Client
         private async void GamedCkeck()
         {
             var stream = cln.GetStream();
-            if (stream.DataAvailable)
+            byte[] data = new byte[256];
+            int readbyte = await stream.ReadAsync(data, 0, data.Length);
+            string command = Encoding.UTF8.GetString(data, 0, readbyte);
+            MessageBox.Show(command);
+            if (command == "first")
             {
-                byte[] data = new byte[256];
-                int readbyte = await stream.ReadAsync(data, 0, data.Length);
-                string command = Encoding.UTF8.GetString(data, 0, readbyte);
-                if (command == "first")
+                //MessageBox.Show("я перевий");
+                znak = "X";
+                znak2 = "O";
+                labelZnak.Text = $"Your sign {znak}";
+                labelInfo.Text = "Your first";
+                foreach (var item in mass)
                 {
-                    //MessageBox.Show("я перевий");
-                    znak = "X";
-                    znak2 = "O";
-                    labelZnak.Text = $"Your sign {znak}";
-                    labelInfo.Text = "Your first";
-                    foreach (var item in mass)
+                    if (string.IsNullOrEmpty(item.Text))
                     {
-                        if (string.IsNullOrEmpty(item.Text))
-                        {
-                            item.Enabled = true;
-                        }
+                        item.Enabled = true;
                     }
                 }
             }
